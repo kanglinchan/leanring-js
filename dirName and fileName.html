@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fileName and dirName</title>
+</head>
+<body>
+	<script type="text/javaScript">
+		window.onload = function(){
+			/*console.log(window.location.pathname);*/
+			//alert(document.currentScript.src);
+			//
+			var fPath = decodeURI(window.location.pathname);
+			var val = fPath.lastIndexOf('/');
+			var fileName = fPath.substr(val+1);
+			var dirName = fPath.substr(0,val+1);
+			document.writeln('file name is: '+ fileName);
+			document.writeln('</Br>')
+			document.writeln('directory name is: '+ dirName);
+
+		}
+	</script>
+</body>
+</html>

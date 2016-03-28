@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prompt</title>
+</head>
+<body>
+	<button id='conf'>设置</button>
+	<div id = 'prompt'>hello prompt</div>
+</body>
+	
+	<script type='text/javaScript'>
+		window.onload = function(){
+			var oConf = document.getElementById('conf');
+			var oPrompt = document.getElementById('prompt');
+
+			oConf.onclick = function(){
+				var val = prompt('设置姓名');
+				if(window.navigator.userAgent.indexOf('Firefox') < 0){
+				oPrompt.innerText = 'hello,'+val;
+				}else{
+					oPrompt.textContent = 'hello,'+val;
+				}
+		}
+	}
+		
+	</script>
+
+</html>
