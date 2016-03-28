@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>setInterval and clearInterval</title>
+</head>
+<body>
+	<h1 id="h1_1">0</h1>
+	<button id="start">start</button>
+	<button id="stop">stop</button>
+</body>
+	<script type="text/JavaScript">
+		window.onload = function(){
+			//var timer = null;	
+			var i = 0;	
+			function start(){
+				var oH1 = document.getElementById('h1_1');
+				
+				timer = setInterval(function(){
+					if(window.navigator.userAgent.indexOf('Firefox') < 0){
+						oH1.innerText = ++i;
+					}else{
+						oH1.textContent = ++i;
+					}
+				},100)
+			}
+
+			function stop(){
+				clearInterval(timer);
+			}
+
+			start();
+
+			var oStart = document.getElementById('start');
+			var oStop = document.getElementById('stop');
+
+			oStart.onclick = function(){
+				stop();
+				start();
+			}
+			oStop.onclick =function(){
+				stop();
+			}
+
+
+
+
+		}
+	</script>
+</html>
